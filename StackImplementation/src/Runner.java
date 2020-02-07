@@ -16,8 +16,11 @@ public class Runner {
 		myNums.push(111);
 		System.out.println(myNums);
 		
-		Stack<Dave> daves = new Stack<Dave>();
-		daves.push(new Dave());
+		QueQue<Integer> nums = new QueQue<Integer>();
+		nums.add(5);
+		nums.add(4);
+		nums.remove();
+		System.out.println(nums);
 		
 		
 		
@@ -25,6 +28,3 @@ public class Runner {
 
 }
 
-class Dave{
-	
-}

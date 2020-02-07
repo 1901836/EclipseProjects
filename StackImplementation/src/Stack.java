@@ -2,8 +2,10 @@ import java.util.ArrayList;
 
 public class Stack<T>{ //A stack can only add or remove from the top like a pringles can 
 	//push and pop
+	//<T> allows you to generalize the TYPE stored in the class
+	//Can replace T with Anything as we don't know the data type yet
 	
-	private ArrayList<T> data;
+	private ArrayList<T> data; //<T> works because of line3 which represents the TYPE as T
 	private int size;
 	
 	public Stack(){
