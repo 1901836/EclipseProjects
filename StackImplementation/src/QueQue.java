@@ -22,18 +22,18 @@ public class QueQue<T>{
 		}
 		
 		
-//		public T remove(){
-//		
-//			for(int i = s.size()-1; i < s.size(); i++){
-//				
-//					s2.push(s.pop());	
-//					s2.pop();
-//				s.push(s2.pop());
-//			}
-//			
-//			return 
-//		
-//		}
+		public T remove(){
+	
+		for(int i = s.size()-1; i < s.size(); i++){
+				
+					s2.push(s.pop());	
+					s2.pop();
+			s.push(s2.pop());
+			
+		}			
+		return s.pop();
+		
+		}
 		
 		public T peek(){
 	Stack<T> temp = new Stack<T>();
