@@ -23,16 +23,17 @@ public class QueQue<T>{
 		
 		
 		public T remove(){
-	
-		for(int i = s.size()-1; i < s.size(); i++){
+	Stack<T> temp = new Stack<T>();
+		for(int i = 0; i <s.size(); i++){
+				temp.push(s.pop());
 				
-					s2.push(s.pop());	
-					s2.pop();
-			s.push(s2.pop());
-			
 		}			
-		return s.pop();
-		
+		T r = temp.pop();
+		temp.push(r);
+		for(int i = 0; i < temp.size(); i++){
+			s.push(temp.pop());
+		}
+			return 	r;
 		}
 		
 		public T peek(){

@@ -20,10 +20,10 @@ public class Runner {
 		q.add(9);
 		q.add(1);
 		q.add(3);
-		q.add(6);
 		q.add(7);
 		q.add(8);
-		System.out.println(q.peek());
+		q.remove();
+		System.out.println(q);
 		
 	
 		
