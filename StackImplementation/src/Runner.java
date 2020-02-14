@@ -25,8 +25,12 @@ public class Runner {
 		q.remove();
 		System.out.println(q);
 		
-	
-		
+	LinkedList<Node> a = new LinkedList<Node>();
+	Node t = new Node(0);
+	a.add(t);
+	a.remove();
+	a.addFront(t);
+	System.out.println(a);
 	}
 
 }
