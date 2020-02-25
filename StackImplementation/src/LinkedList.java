@@ -4,7 +4,7 @@ public class LinkedList<T>{ //<T> allows us to use any data type
 	private int size;
 	
 	//reference to the front of the list
-	private Node<T> head;
+	private Node head;
 	
 	public LinkedList(){
 		//job of the constructor is to initialize the instance variables
@@ -13,7 +13,7 @@ public class LinkedList<T>{ //<T> allows us to use any data type
 		
 	}
 	
-	public Node<T>peek(){ //returns the first element (Headnode)
+	public Node peek(){ //returns the first element (Headnode)
 		return head;
 	}
 	
@@ -22,11 +22,12 @@ public class LinkedList<T>{ //<T> allows us to use any data type
 		size++;
 		
 		if(head == null){
-			Node<T> n = new Node(t); //create a new node that encapsulates the data t
+			Node n = new Node(t); //create a new node that encapsulates the data t
 			head = n; //head reference now points to this first Node
 			return;
  		}
-		Node<T>temp = head;
+		Node<T> temp = new Node<T>(t);
+		temp = head;
 		while(temp.next!=null){
 			//we know its not the end of the list unless the next Node reference is pointing to null
 			temp = temp.next();
@@ -38,9 +39,10 @@ public class LinkedList<T>{ //<T> allows us to use any data type
 	}
 	public void addFront(T t){ //add to the beginning of the list
 	size++;
-	Node<T>temp = head;
+	Node<T> temp = new Node<T>(t);
+	 temp = head;
 	if(head==null){
-		Node<T>n = new Node(t); //creating another new node that encapsulates the data t
+		Node n = new Node(t); //creating another new node that encapsulates the data t
 		head = n; //head reference now points to this first node
 		return;
 	}
@@ -50,9 +52,9 @@ public class LinkedList<T>{ //<T> allows us to use any data type
 	
 	
 	}
-	public Node<T>remove(){ //remove and returns first element(Head)
+	public Node remove(){ //remove and returns first element(Head)
 		
-	Node<T>temp = head;
+	Node temp = head;
 		if(head==null){ //if head equals null, then it should return null
 			return null;
 		}
@@ -66,7 +68,7 @@ public class LinkedList<T>{ //<T> allows us to use any data type
 	/* remove node at index i
 	 * REQUIRES i < size
 	 */
-	public Node<T>remove(int i){ // remove and returns element at the given index
+	public Node remove(int i){ // remove and returns element at the given index
 		if(i > size){ //if i is greater than the size, it must return null
 			return null;
 		}
@@ -75,7 +77,8 @@ public class LinkedList<T>{ //<T> allows us to use any data type
 		head = null;
 		return head;
 			}
-		Node<T>temp = head;
+		
+		Node temp = head;
 	
 		
 		while(i<size){
