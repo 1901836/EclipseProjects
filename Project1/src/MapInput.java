@@ -31,9 +31,6 @@ public class MapInput {
 				 for(int a = 0; a < i; a++){
 						for(int b = 0; b < j; b++){
 							for(int c = 0; c < k; c++){
-								if(ch[0][2].equals("K")){
-									 System.out.println("start");
-								}
 								while(sc.hasNextLine())	{
 									String n = sc.next();
 										ch[a][b][c] = n;
