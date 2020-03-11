@@ -6,7 +6,7 @@ public class QApproach extends MapInput {
 
 		ArrayDeque<Integer> deck = new ArrayDeque<Integer>();
 
-		;
+
 
 		for (int i = 0; i < MapInput.str.length; i++) {
 			for (int j = 0; j < MapInput.str[0].length; j++) {
