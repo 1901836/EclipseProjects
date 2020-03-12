@@ -7,7 +7,7 @@ public class QApproach extends MapInput {
 		MapInput.main(args);
 		
 		
-		ArrayDeque<Integer> deq = new ArrayDeque<Integer>();
+		ArrayDeque<Integer> deck = new ArrayDeque<Integer>();
 		
 		MapInput m = new MapInput(); 
 		
@@ -16,10 +16,9 @@ public class QApproach extends MapInput {
 		
 
 		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[i].length; j++) {
+			for (int j = 0; j < arr[0].length; j++) {
 				
-				
-				System.out.println(arr[i][j] + " Location:" + i + " " + j);
+				System.out.println(arr[i][j] + " Location: " + i + " " + j);
 			}
 		}
 

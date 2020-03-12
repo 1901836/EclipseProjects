@@ -38,7 +38,7 @@ public class MapInput {
 
 		try {
 
-			Scanner sc = new Scanner(file2); // setup scanner
+			Scanner sc = new Scanner(file); // setup scanner
 
 			while (sc.hasNextLine()) {
 
@@ -64,14 +64,12 @@ public class MapInput {
 					for (int q = 0; q < col; q++) {
 						arr[0][q] = ch[0][0][0].substring(q, count2);
 						count2++;
-
 					}
+
 				}
 
-				if (sc.hasNext("0") || sc.hasNext("1") || sc.hasNext("2")
-						|| sc.hasNext("3") || sc.hasNext("4")
-						|| sc.hasNext("5") || sc.hasNext("6")
-						|| sc.hasNext("7") || sc.hasNext("8")
+				if (sc.hasNext("0") || sc.hasNext("1") || sc.hasNext("2") || sc.hasNext("3") || sc.hasNext("4")
+						|| sc.hasNext("5") || sc.hasNext("6") || sc.hasNext("7") || sc.hasNext("8")
 						|| sc.hasNext("9")) {
 					System.out.print(ch[0][0][0] + " ");
 					coordinate = true;
@@ -109,14 +107,15 @@ public class MapInput {
 									ch[a][b][c] = x;
 									int count3 = 1;
 
-									row = 0;
+									row = 1;
+								
 									for (int t = 0; t < col; t++) {
-										arr[row][t] = ch[a][b][c].substring(t,
-												count3);
+										arr[row][t] = ch[a][b][c].substring(t, count3);
 										count3++;
-									}
+									
+										}
 									row++;
-
+								
 									if (first) {
 										System.out.println();
 										System.out.println(ch[a][b][c]);
