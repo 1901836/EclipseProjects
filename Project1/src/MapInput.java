@@ -7,16 +7,22 @@ import java.util.Stack;
 
 public class MapInput {
 	public static File file = new File("map1"); // point to file
+	public static File file2 = new File("CoordinateMap2");
 	public static String[][][] ch;
 	public static String[][] str;
+	public static String[][] arr;
 	public static boolean first = true;
-	public static Queue q;
+	ArrayDeque<Integer> deck = new ArrayDeque<Integer>();
+	public static Queue que;
 	public static Stack st;
+	public static int row;
+	public static int col;
 
 	String[] args2 = { "--Stack", "map1" };
 	String fileName = args2[args2.length - 1];
 
 	public static void main(String[] args) {
+		boolean coordinate = false;
 		// TODO Auto-generated method stub
 
 		// keep input file in the parent folder for the project
@@ -32,7 +38,7 @@ public class MapInput {
 
 		try {
 
-			Scanner sc = new Scanner(file); // setup scanner
+			Scanner sc = new Scanner(file2); // setup scanner
 
 			while (sc.hasNextLine()) {
 
@@ -43,32 +49,45 @@ public class MapInput {
 				int k = sc.nextInt();
 				// System.out.println(k);
 				int count = 2;
+				row = i;
+				col = j;
 
 				ch = new String[i][j][k];
 				str = new String[i][j];
-				// for(int r = 0; r < str.length; r++){
-				// for(int s = 0; s < str[0].length; s++){
-				// if(sc.hasNextLine()){
-				// str[r][s] = sc.nextLine();
-				// System.out.println(str);
-				// }
-				// }
-				// }
+				arr = new String[i][j];
+				ch[0][0][0] = sc.next();
 
-				System.out.print(sc.next() + " ");
+				if (ch[0][0][0].length() > 1) {
+					int count2 = 1;
+
+					System.out.print(ch[0][0][0] + " ");
+					for (int q = 0; q < col; q++) {
+						arr[0][q] = ch[0][0][0].substring(q, count2);
+						count2++;
+
+					}
+				}
+
+				if (sc.hasNext("0") || sc.hasNext("1") || sc.hasNext("2")
+						|| sc.hasNext("3") || sc.hasNext("4")
+						|| sc.hasNext("5") || sc.hasNext("6")
+						|| sc.hasNext("7") || sc.hasNext("8")
+						|| sc.hasNext("9")) {
+					System.out.print(ch[0][0][0] + " ");
+					coordinate = true;
+				} else {
+					coordinate = false;
+				}
 
 				for (int a = 0; a < i; a++) {
 					for (int b = 0; b < j; b++) {
 
-						if (sc.hasNext("0") || sc.hasNext("1")
-								|| sc.hasNext("2") || sc.hasNext("3")
-								|| sc.hasNext("4") || sc.hasNext("5")
-								|| sc.hasNext("6") || sc.hasNext("7")
-								|| sc.hasNext("8") || sc.hasNext("9")) {
+						if (coordinate) {
 							while (sc.hasNextLine()) {
 
 								String n = sc.next();
-								
+								str[a][b] = n;
+
 								if (count % 3 == 0) {
 									System.out.print(n);
 
@@ -88,13 +107,15 @@ public class MapInput {
 
 									String x = sc.next();
 									ch[a][b][c] = x;
-									if(sc.next().contains("K")){
-										q.add(a);
-										q.add(b);
-										q.add(c);
-										System.out.print(q);
-									}
+									int count3 = 1;
 
+									row = 0;
+									for (int t = 0; t < col; t++) {
+										arr[row][t] = ch[a][b][c].substring(t,
+												count3);
+										count3++;
+									}
+									row++;
 
 									if (first) {
 										System.out.println();
@@ -103,20 +124,18 @@ public class MapInput {
 									} else {
 										System.out.println(x);
 									}
-
 								}
 							}
-
 						}
-
 					}
-
 				}
 			}
+
 			sc.close(); // done with scanner
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
 	}
+
 }
